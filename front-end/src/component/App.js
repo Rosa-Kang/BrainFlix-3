@@ -8,8 +8,7 @@ import NewComment from "./NewComment";
 import CommentList from "../container/CommentList";
 import VideoList from "../container/VideoList";
 
-const videoUrl =
-  "https://project-2-api.herokuapp.com/videos?api_key=46a5c4b9-e4ed-4f7e-bbf7-be32f1a02279";
+const videoUrl = "http://localhost:5000/video/videos";
 
 class App extends Component {
   state = {
@@ -40,9 +39,9 @@ class App extends Component {
         };
       });
 
-      const mainVideoUrl = `https://project-2-api.herokuapp.com/videos/${
+      const mainVideoUrl = `http://localhost:5000/video/videos/${
         video.data[0].id
-      }?api_key=46a5c4b9-e4ed-4f7e-bbf7-be32f1a02279`;
+      }`;
 
       axios.get(mainVideoUrl).then(response => {
         this.setState({
@@ -61,7 +60,7 @@ class App extends Component {
       window.location.reload();
     }
     const videoId = this.props.match.params.id;
-    const currentVideo = `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=46a5c4b9-e4ed-4f7e-bbf7-be32f1a02279`;
+    const currentVideo = `http://localhost:5000/video/videos/${videoId}`;
 
     axios.get(currentVideo).then(response => {
       if (this.props.match.params.id !== this.state.mainVideo.id) {

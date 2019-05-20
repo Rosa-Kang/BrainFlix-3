@@ -101,7 +101,7 @@ body {
 
 .header__right--button {
   height: 48px;
-  width: 74.5vw;
+  width: 90vw;
   margin: 0px 7px 0px 0px;
   font-size: 1em;
   color: white;
@@ -212,17 +212,20 @@ body {
 
 .hero__scroll {
   border-radius: 4px;
-  padding: 10px 5px 10px 12px;
+  padding: 10px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
   bottom: 1px;
   position: absolute;
 }
 
 .hero__scroll--hr {
-  width: 100%;
+  width: 75%;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   display: -webkit-box;
@@ -231,12 +234,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0px 5px;
+  margin: 0vw 1vw;
 }
 
 .hero__scroll--hr hr {
   height: 1px;
-  width: 77%;
+  width: 79%;
   margin: auto 10px;
   border-color: black;
   background: black;
@@ -244,17 +247,10 @@ body {
   margin-bottom: 0px;
 }
 
-.hero__scroll--hr p {
-  color: white;
-  white-space: nowrap;
-  font-size: 1.5vw;
-  margin-top: 8px;
-  margin-bottom: 0px;
-}
-
 .hero__scroll--stuffs {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 4px;
+  margin-right: 16px;
   padding: 4px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -262,8 +258,8 @@ body {
 }
 
 .hero__scroll #play {
+  margin-left: 16px;
   background-color: rgba(0, 0, 0, 0.4);
-  margin: 0px 0px 0px 16px;
   padding: 4px 10px;
   border-radius: 4px;
 }
@@ -271,6 +267,12 @@ body {
 .hero__scroll #fullscreen,
 .hero__scroll #volume {
   margin: 0px 8px;
+}
+
+@media only screen and (max-width: 767px) {
+  p {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -282,7 +284,16 @@ body {
     height: 52.1vw;
   }
   .hero__scroll {
-    padding: 10px 5px 10px 20px;
+    padding: 10px 0px;
+  }
+  .hero__scroll #play {
+    margin: 0px;
+  }
+  .hero__scroll--stuffs {
+    margin: 0px;
+  }
+  .hero__scroll--hr {
+    width: 79%;
   }
   .hero__scroll--hr hr {
     margin-top: 13px;
@@ -291,6 +302,9 @@ body {
   .hero__scroll--hr p {
     margin-top: 6px;
     margin-bottom: 0px;
+    color: white;
+    white-space: nowrap;
+    font-size: 0.7em;
   }
 }
 
@@ -302,11 +316,10 @@ body {
   .hero video {
     height: 37.5vw;
   }
-  .hero__scroll {
-    padding: 10px 5px 10px 35px;
+  .hero__scroll--hr {
+    width: 82%;
   }
   .hero__scroll--hr hr {
-    width: 80%;
     margin-top: 15px;
   }
   .hero__scroll--hr p {
@@ -388,7 +401,7 @@ body {
 
 .clip__description {
   font-size: 13px;
-  border-top: 1px solid #afafaf;
+  border-top: 1px solid #e1e1e1;
   padding-top: 24px;
 }
 
@@ -401,7 +414,7 @@ body {
     margin-bottom: 24px;
   }
   .clip #clip {
-    border-bottom: 1px solid #afafaf;
+    border-bottom: 1px solid #e1e1e1;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -426,6 +439,9 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
+  .clip {
+    margin: 48px 0px 48px 24px;
+  }
   .clip__likes {
     padding-right: 32px;
   }
@@ -501,6 +517,7 @@ body {
 
 .newComment__new--comment textarea {
   border-radius: 4px;
+  border: #e1e1e1 1px solid;
   width: 91.6%;
   background-color: #fafafa;
   margin: 6px 0px 16px 0px;
@@ -549,19 +566,20 @@ body {
     font-size: 15px;
     border-radius: 4px;
     width: 57.3vw;
-    height: 1.2em;
+    height: 6px;
     padding: 20px;
   }
   .newComment__new--comment #myButton {
     font-size: 1em;
     width: 31.8%;
-    height: 60px;
+    height: 48px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .newComment {
     padding-bottom: 4px;
+    margin: 0px 0px 0px 24px;
   }
   .newComment__new {
     padding-right: 32px;
@@ -676,6 +694,9 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
+  .users {
+    margin: 0px 0px 0px 24px;
+  }
   .users__comment--mention {
     font-size: 15px;
   }
@@ -785,6 +806,8 @@ body {
 @media only screen and (min-width: 1440px) {
   .videos {
     margin: 0px;
+    padding-left: 24px;
+    border-left: 1px solid #e1e1e1;
   }
   .videos h4 {
     font-size: 13px;

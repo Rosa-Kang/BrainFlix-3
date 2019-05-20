@@ -34,6 +34,7 @@
 
       textarea {
         border-radius: 4px;
+        border: #e1e1e1 1px solid;
         width: 91.6%;
         background-color: #fafafa;
         margin: 6px 0px 16px 0px;
@@ -77,14 +78,14 @@
           font-size: 15px;
           border-radius: 4px;
           width: 57.3vw;
-          height: 1.2em;
+          height: 6px;
           padding: 20px;
         }
 
         #myButton {
           font-size: 1em;
           width: 31.8%;
-          height: 60px;
+          height: 48px;
         }
       }
     }
@@ -94,6 +95,7 @@
 @media only screen and (min-width: 1440px) {
   .newComment {
     padding-bottom: 4px;
+    margin: 0px 0px 0px 24px;
     &__new {
       padding-right: 32px;
       &--comment {

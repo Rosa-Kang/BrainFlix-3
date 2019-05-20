@@ -20,48 +20,42 @@
 
   &__scroll {
     border-radius: 4px;
-    padding: 10px 5px 10px 12px;
+    padding: 10px 0px;
     display: flex;
-    width: 90%;
+    justify-content: center;
+    width: 100%;
     bottom: 1px;
     position: absolute;
 
     &--hr {
-      width: 100%;
+      width: 75%;
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 4px;
       display: flex;
       justify-content: center;
-      margin: 0px 5px;
+      margin: 0vw 1vw;
 
       hr {
         height: 1px;
-        width: 77%;
+        width: 79%;
         margin: auto 10px;
         border-color: black;
         background: black;
         margin-top: 10px;
         margin-bottom: 0px;
       }
-
-      p {
-        color: white;
-        white-space: nowrap;
-        font-size: 1.5vw;
-        margin-top: 8px;
-        margin-bottom: 0px;
-      }
     }
     &--stuffs {
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 4px;
+      margin-right: 16px;
       padding: 4px 5px;
       display: flex;
     }
 
     #play {
+      margin-left: 16px;
       background-color: rgba(0, 0, 0, 0.4);
-      margin: 0px 0px 0px 16px;
       padding: 4px 10px;
       border-radius: 4px;
     }
@@ -70,6 +64,12 @@
     #volume {
       margin: 0px 8px;
     }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  p {
+    display: none;
   }
 }
 
@@ -83,9 +83,18 @@
     }
 
     &__scroll {
-      padding: 10px 5px 10px 20px;
+      padding: 10px 0px;
+
+      #play {
+        margin: 0px;
+      }
+
+      &--stuffs {
+        margin: 0px;
+      }
 
       &--hr {
+        width: 79%;
         hr {
           margin-top: 13px;
           margin-bottom: 0px;
@@ -94,6 +103,9 @@
         p {
           margin-top: 6px;
           margin-bottom: 0px;
+          color: white;
+          white-space: nowrap;
+          font-size: 0.7em;
         }
       }
     }
@@ -110,11 +122,9 @@
     }
 
     &__scroll {
-      padding: 10px 5px 10px 35px;
-
       &--hr {
+        width: 82%;
         hr {
-          width: 80%;
           margin-top: 15px;
         }
 
