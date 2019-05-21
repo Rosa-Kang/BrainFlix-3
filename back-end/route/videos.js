@@ -13,8 +13,6 @@ router.route("/videos/:id").get((req, res) => {
 });
 
 router.post("/videos/:id", (req, res) => {
-  console.log(req.params.id);
-  console.log(req.body);
   res.json(contentController.addComment(req.params.id, req.body));
 });
 

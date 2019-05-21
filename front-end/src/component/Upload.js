@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import axios from "axios";
-import CancelButton from "../my-func/CancelButton";
 
 export default class Upload extends Component {
   state = {
@@ -22,10 +21,16 @@ export default class Upload extends Component {
         });
       });
     console.log(this.state.comments);
+    window.location.href = "/";
   };
+
+  goBack = () => {
+    window.location.href = "/";
+  };
+
   render() {
     return (
-      <form onSubmit={this.addVideo} className="upload">
+      <form onSubmit={this.addVideo} onReset={this.goBack} className="upload">
         <Header />
         <p className="upload__title">Upload Video</p>
         <div className="upload__video">
@@ -57,13 +62,10 @@ export default class Upload extends Component {
           </div>
         </div>
         <div className="upload__button">
-          <button className="upload__button--publish">PUBLISH</button>
-          <button
-            id="myButton"
-            onClick={CancelButton}
-            type="submit"
-            className="upload__button--cancel"
-          >
+          <button type="submit" className="upload__button--publish">
+            PUBLISH
+          </button>
+          <button type="reset" id="myButton" className="upload__button--cancel">
             CANCEL
           </button>
         </div>
