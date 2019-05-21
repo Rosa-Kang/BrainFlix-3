@@ -17,7 +17,6 @@ const contentController = {
       timestamp: video.timestamp,
       comments: video.comments
     };
-
     return contents;
   },
   addComment: (id, comment) => {
