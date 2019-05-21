@@ -6,7 +6,7 @@ class Videos extends Component {
     return (
       <div className="videos__list">
         <div className="videos__list--thumbnail">
-          <Link to={`/video/${this.props.id}`}>
+          <Link to={`/videos/${this.props.id}`}>
             <img src={this.props.image} alt="thumbnail" />
           </Link>
         </div>

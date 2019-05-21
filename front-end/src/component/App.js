@@ -29,6 +29,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log(videoUrl);
     axios.get(videoUrl).then(video => {
       const newVideos = video.data.map(videolist => {
         return {
@@ -42,7 +43,7 @@ class App extends Component {
       const mainVideoUrl = `http://localhost:5000/video/videos/${
         video.data[0].id
       }`;
-
+      console.log(mainVideoUrl);
       axios.get(mainVideoUrl).then(response => {
         this.setState({
           mainVideo: response.data,
@@ -57,8 +58,10 @@ class App extends Component {
       typeof this.props.match.params.id === "undefined" &&
       prevState.location.pathname !== "/"
     ) {
+      //console.log('working');
       window.location.reload();
     }
+    console.log(prevState.location.pathname);
     const videoId = this.props.match.params.id;
     const currentVideo = `http://localhost:5000/video/videos/${videoId}`;
 
@@ -69,11 +72,12 @@ class App extends Component {
         });
       }
     });
-    console.log(this.state.mainVideo);
+    //console.log(this.state.mainVideo);
   }
 
   render() {
-    console.log(this.state.mainVideo);
+    //console.log(this.state.mainVideo.comments);
+
     return (
       <div className="App">
         <Header history={this.props.history} />
