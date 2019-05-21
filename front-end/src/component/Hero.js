@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import Fullscreen from "../assets/icons/SVG/Icon-fullscreen.svg";
 import Play from "../assets/icons/SVG/Icon-play.svg";
+import Pause from "../assets/icons/SVG/Icon-pause.svg";
 import Volume from "../assets/icons/SVG/Icon-volume.svg";
 
 class Hero extends Component {
   render() {
-    let vid = document.getElementById("myVideo");
+    let vid = document.getElementById("play");
+    let video = document.getElementById("myVideo");
+    let playpause = true;
     function playVid() {
-      vid.play();
+      video.play();
+      if (playpause) {
+        vid.setAttribute("src", Pause);
+        playpause = !playpause;
+      } else if (!playpause) {
+        video.pause();
+        vid.setAttribute("src", Play);
+        playpause = !playpause;
+      }
     }
-    function pauseVid() {
-      vid.pause();
-    }
+
     return (
       <section id="background">
         <div className="hero">
