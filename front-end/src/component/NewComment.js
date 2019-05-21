@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 import Mohan from "../assets/images/Mohan-muruge.jpg";
+import axios from "axios";
 
 export default class NewComment extends Component {
   state = {
     message: ""
   };
 
-  handleChange = e => {
-    this.setState({
-      message: e.target.value
+  addComment = event => {
+    const time = new Date();
+    const timeStr = time.toLocaleDateString();
+
+    const videoId = this.props.videos.id;
+    const currentVideo = `http://localhost:5000/video/videos/${videoId}`;
+    event.preventDefault();
+    axios.post(currentVideo, {
+      comment: event.target.text.value,
+      timestamp: timeStr,
+      name: "Mohan Moruge"
     });
+
+    window.location.reload();
   };
 
-  handleClick = () => {
-    this.setState({
-      message: ""
-    });
-  };
   render() {
     return (
       <div className="newComment">
@@ -25,7 +31,7 @@ export default class NewComment extends Component {
         </h4>
         <div className="newComment__new">
           <img id="Mohan" src={Mohan} alt="mohan" />
-          <div className="newComment__new--comment">
+          <form className="newComment__new--comment" onSubmit={this.addComment}>
             <div id="setAside">
               <label>JOIN THE CONVERSATION</label>
               <textarea
@@ -35,14 +41,12 @@ export default class NewComment extends Component {
                 name="text"
                 rows="7"
                 cols="50"
-                value={this.state.message}
-                onChange={this.handleChange}
               />
             </div>
-            <button id="myButton" type="submit" onClick={this.handleClick}>
+            <button id="myButton" type="submit">
               COMMENT
             </button>
-          </div>
+          </form>
         </div>
       </div>
     );

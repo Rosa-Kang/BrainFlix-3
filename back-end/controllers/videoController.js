@@ -7,14 +7,6 @@ const VideoController = {
     );
     return eachVideo;
   }
-
-  /*
-    addVideo: (newVideo) => {
-      const video = VideoController.getVideo(id)
-      video.body.push(todo)
-      return video.todos
-    }
-    */
 };
 
 module.exports = VideoController;

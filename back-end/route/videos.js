@@ -12,6 +12,12 @@ router.route("/videos/:id").get((req, res) => {
   res.json(contentController.getContents(req.params.id));
 });
 
+router.post("/videos/:id", (req, res) => {
+  console.log(req.params.id);
+  console.log(req.body);
+  res.json(contentController.addComment(req.params.id, req.body));
+});
+
 router.post("/videos", (req, res) => {
   let newVideo = {
     id: uniqueId,

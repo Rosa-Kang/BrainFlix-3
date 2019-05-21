@@ -19,14 +19,14 @@ const contentController = {
     };
 
     return contents;
+  },
+  addComment: (id, comment) => {
+    const video = videoController.getVideo(id);
+    console.log(video);
+    console.log(comment);
+    video.comments.push(comment);
+    return video.contents;
   }
-  /*
-    addTodo: (username, todo) => {
-      const user = videoController.getUser(username)
-      user.todos.push(todo)
-      return user.todos
-    }
-    */
 };
 
 module.exports = contentController;
